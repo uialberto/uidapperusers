@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Community.DataAccess.Helpers
 {
@@ -13,9 +10,10 @@ namespace Community.DataAccess.Helpers
 
         private readonly string _connectionString;
 
-        public SettingsHelper( string connectionString)
+        public SettingsHelper(string connectionString)
         {
-                if(connectionString ==null) throw new ArgumentNullException(nameof(connectionString));
+            if (connectionString == null) throw new ArgumentNullException(nameof(connectionString));
+            _connectionString = connectionString;
         }
 
         public string GetSettingsConnection()
@@ -24,7 +22,8 @@ namespace Community.DataAccess.Helpers
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
-            return setting.GetConnectionString(_connectionString);
+            var clave = setting.GetConnectionString(_connectionString);
+            return clave;
 
         }
 

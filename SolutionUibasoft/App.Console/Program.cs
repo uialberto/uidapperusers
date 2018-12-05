@@ -13,11 +13,10 @@ namespace App.Console
         static void Main(string[] args)
         {
             GetAll();
-            //var newUsuario = new UsuarioDto(){ Nombres = "Alberto 1", Apellidos = "Baigorria 1"};
-
-            //var row = new ServiceUsuarios().Insert(newUsuario);
-            //System.Console.WriteLine($"Filas Insertadas: {row}");
-
+            var newUsuario = new UsuarioDto(){ Nombres = "Alberto 2", Apellidos = "Baigorria 2"};        
+            var row = new ServiceUsuarios().Insert(newUsuario);
+            System.Console.WriteLine($"Filas Insertadas: {row}");
+            GetAll();
             System.Console.ReadLine();
         }
 
