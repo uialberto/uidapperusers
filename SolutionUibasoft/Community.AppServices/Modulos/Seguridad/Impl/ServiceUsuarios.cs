@@ -13,12 +13,12 @@ namespace Community.AppServices.Modulos.Seguridad.Impl
     {
         public List<UsuarioDto> List()
         {
-            return new RepoUsuarios().List();
+            return new RepoUsuariosDapper().List();
         }
 
         public int Insert(UsuarioDto param)
         {
-            return new RepoUsuarios().Insert(param);
+            return new RepoUsuariosDapper().Insert(param);
         }
     }
 }
