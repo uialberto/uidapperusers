@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F972CF0-8ED4-48FC-BA93-00F21A60398F}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Community.DataAccess</RootNamespace>
-    <AssemblyName>Community.DataAccess</AssemblyName>
+    <ProjectGuid>{0E68AAF7-827A-4293-94FE-C27EE9105E55}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>App.Console</RootNamespace>
+    <AssemblyName>App.Console</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Extensions.Configuration, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Configuration.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
     </Reference>
@@ -84,23 +83,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entidades\Seguridad\Usuario.cs" />
-    <Compile Include="Helpers\FactoryDataAccess.cs" />
-    <Compile Include="Helpers\SettingsHelper.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositorios\Seguridad\Impl\RepoUsuarios.cs" />
-    <Compile Include="Repositorios\Seguridad\IRepoUsuarios.cs" />
-    <Compile Include="Repository.Dapper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="App.config" />
+    <None Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Community.Base\Community.Base.csproj">
-      <Project>{9e199f07-b5f5-40b9-b366-5dcab6c228c2}</Project>
-      <Name>Community.Base</Name>
+    <ProjectReference Include="..\Community.AppServices\Community.AppServices.csproj">
+      <Project>{175bf108-286e-4b15-811b-d04eda3dc95e}</Project>
+      <Name>Community.AppServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\Community.DataTransfer\Community.DataTransfer.csproj">
       <Project>{f8859beb-4bbb-4d87-86eb-f0b060edd46f}</Project>

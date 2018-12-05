@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Community.DataTransfer
+namespace Community.DataAccess.Repositorios.Seguridad
 {
-    public class Class1
+    public interface IRepoUsuarios
     {
     }
 }

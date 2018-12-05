@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Community.Base
+namespace Community.AppServices.Modulos.Seguridad
 {
-    public class Class1
+    public interface IServiceUsuarios
     {
     }
 }
