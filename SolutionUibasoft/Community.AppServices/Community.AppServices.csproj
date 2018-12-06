@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modulos\Seguridad\Impl\ServiceUsuarios.cs" />
+    <Compile Include="Modulos\Seguridad\Impl\ServiceUsuarios.Generic.cs">
+      <DependentUpon>ServiceUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Seguridad\IServiceUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

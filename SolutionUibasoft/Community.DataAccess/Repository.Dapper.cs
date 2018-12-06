@@ -10,6 +10,21 @@ namespace Community.DataAccess
 {
     public class RepositoryDapper<T> : IRepository<T>  where T : class
     {
+        public void Add(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Get(long id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<T> GetAll(string query)
         {
             using (var db = new FactoryDataAccess().GetConnection)
@@ -24,6 +39,11 @@ namespace Community.DataAccess
             {
                 return db.Execute(query, data);
             }
+        }
+
+        public void Update(T entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }
