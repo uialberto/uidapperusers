@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Community.DataAccess.Infrastructure;
+using Dapper;
 
 namespace Community.DataAccess
 {
@@ -10,7 +12,18 @@ namespace Community.DataAccess
     {
         public IEnumerable<TEntity> GetAll(string query)
         {
-            throw new NotImplementedException();
+            using (var db = new ConnectionFactory().GetConnection)
+            {
+                return db.Query<TEntity>(query).ToList();
+            }
+        }
+
+        public async Task<IEnumerable<TEntity>> GetAllAsync(string query)
+        {
+            using (var db = new ConnectionFactory().GetConnection)
+            {
+                return await db.QueryAsync<TEntity>(query);
+            }
         }
 
         public int SaveData(string query, TEntity data)

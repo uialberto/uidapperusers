@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using  Dapper;
+using Dapper;
+using System.Threading.Tasks;
 
 namespace Community.DataAccess
 {
@@ -31,6 +32,11 @@ namespace Community.DataAccess
             {
                 return db.Query<T>(query).ToList();
             }            
+        }
+
+        public Task<IEnumerable<T>> GetAllAsync(string query)
+        {
+            throw new NotImplementedException();
         }
 
         public int SaveData(string query, T data)

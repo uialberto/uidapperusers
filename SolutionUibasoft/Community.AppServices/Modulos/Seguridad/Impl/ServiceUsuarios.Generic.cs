@@ -20,5 +20,10 @@ namespace Community.AppServices.Modulos.Seguridad.Impl
         {
             return await _unitOfWork.UsuariosRepo.GetAllPaginateAsync(pageIndex, pageSize);
         }
+
+        public async Task<List<UsuarioDto>> GetAllAsync()
+        {
+            return await _unitOfWork.UsuariosRepo.GetAllAsync();
+        }
     }
 }

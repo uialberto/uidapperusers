@@ -10,6 +10,7 @@ namespace Community.DataAccess.Repositorios.Seguridad
 {
     public interface IRepoUsuarios
     {
+        Task<List<UsuarioDto>> GetAllAsync();
         Task<List<UsuarioDto>> GetAllPaginateAsync(int pageIndex, int pageSize);
     }
 }

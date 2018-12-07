@@ -26,10 +26,22 @@ namespace App.Console
 
             var appUsers = container.Resolve<IServiceUsuarios>();
 
-            var task = Task.Run(() => appUsers.GetAllPaginate(1,1));
-            task.Wait();          
+            var task = Task.Run(() => appUsers.GetAllAsync());
+            task.Wait();
 
             var usuarios = task.Result;
+
+            foreach (var user in usuarios)
+            {
+                System.Console.WriteLine($"All Datas. Id: {user.Id}, Nombres :{user.Nombres}, Apellidos: {user.Apellidos}");
+            }
+
+            System.Console.ReadLine();
+
+            task = Task.Run(() => appUsers.GetAllPaginate(1,5));
+            task.Wait();          
+
+             usuarios = task.Result;
 
             foreach (var user in usuarios)
             {

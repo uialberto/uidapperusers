@@ -10,5 +10,6 @@ namespace Community.AppServices.Modulos.Seguridad
     public interface IServiceUsuarios
     {
         Task<List<UsuarioDto>> GetAllPaginate(int pageIndex, int pageSize);
+        Task<List<UsuarioDto>> GetAllAsync();
     }
 }

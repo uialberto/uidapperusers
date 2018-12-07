@@ -12,7 +12,7 @@ using Community.DataAccess.Helpers;
 namespace Community.DataAccess.Infrastructure
 {
 
-    public class ConnectionFactory : IConnectionFactory
+    public class ConnectionFactory : IConnectionFactory, IDisposable
     {
         private string _connectionString;
         private string _provider;
@@ -42,11 +42,15 @@ namespace Community.DataAccess.Infrastructure
                 var factory = DbProviderFactories.GetFactory(providerFactory);
                 var connection = factory.CreateConnection();
                 if (connection == null) throw  new ArgumentNullException(nameof(connection));
-                connection.ConnectionString = _connectionString;
-                connection.Open();
+                connection.ConnectionString = _connectionString;                
                 return connection;
 
             }
+        }
+
+        public void Dispose()
+        {
+            GetConnection?.Dispose();
         }
     }
 }

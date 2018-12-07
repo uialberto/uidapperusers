@@ -9,6 +9,7 @@ namespace Community.DataAccess
     public interface IRepository<TEntity> where TEntity : class
     {
         IEnumerable<TEntity> GetAll(string query);
+        Task<IEnumerable<TEntity>> GetAllAsync(string query);
         int SaveData(string query, TEntity data);
         TEntity Get(long id);
         void Add(TEntity entity);
