@@ -107,7 +107,9 @@
     <Compile Include="Repository.Dapper.Generic.cs">
       <DependentUpon>Repository.Dapper.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repository.Generico.cs" />
+    <Compile Include="Repository.Generico.cs">
+      <DependentUpon>Repository.Dapper.cs</DependentUpon>
+    </Compile>
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.Dapper.cs" />
   </ItemGroup>
