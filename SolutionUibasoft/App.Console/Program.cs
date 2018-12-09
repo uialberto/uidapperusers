@@ -20,6 +20,7 @@ namespace App.Console
         {
             var container = new UnityContainer();
             container.RegisterType<IRepoUsuarios, RepoUsuariosGeneric>();
+            container.RegisterType<IRepoUsuarios, RepoUsuariosGenericoBase>();
             container.RegisterType<IConnectionFactory, ConnectionFactory>();
             container.RegisterType<IUnitOfWork, UnitOfWorkDapper>();
             container.RegisterType<IServiceUsuarios, ServiceUsuariosGeneric>();
@@ -47,6 +48,12 @@ namespace App.Console
             {
                 System.Console.WriteLine($"Id: {user.Id}, Nombres :{user.Nombres}, Apellidos: {user.Apellidos}");
             }
+
+            var idUser = 1;
+            var deletes = appUsers.DeleteFullUser(idUser);
+
+            System.Console.WriteLine($"Usuario Elminado: {idUser}, Registros: {deletes}");
+
             System.Console.ReadLine();
 
         }

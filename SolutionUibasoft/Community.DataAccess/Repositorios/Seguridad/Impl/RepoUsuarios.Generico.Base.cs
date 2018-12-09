@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Community.DataAccess.Entidades.Seguridad;
 using Community.DataAccess.Helpers;
+using Community.DataAccess.Infrastructure;
 using Community.DataTransfer.DataTransferObjects.Modulos.Seguridad;
 using Dapper;
 
@@ -17,6 +18,28 @@ namespace Community.DataAccess.Repositorios.Seguridad.Impl
         public RepoUsuariosGenericoBase()
         {
             
+        }
+
+        public int FullDelete(long idUser)
+        {
+            var result = -1;
+            using (var connection = new ConnectionFactory().GetConnection)
+            {    
+                connection.Open();
+
+                var queryUser = "DELETE FROM Usuarios WHERE Id = @UsuarioId";
+                var queryLogs = "DELETE FROM UsuariosLogs WHERE IdUsuario = @UsuarioId";
+                var transaction = connection.BeginTransaction();
+                var response = connection.Execute(queryUser, new { UsuarioId = idUser}, transaction);
+                response += connection.Execute(queryLogs, new { UsuarioId = idUser }, transaction);
+
+                transaction.Commit();
+                connection.Close(); // Optional por el using hace close and dispose
+
+                result = response;
+
+            }
+            return result;
         }
 
         public async Task<List<UsuarioDto>> GetAllAsync()

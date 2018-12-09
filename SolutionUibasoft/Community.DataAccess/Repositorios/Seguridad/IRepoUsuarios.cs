@@ -12,5 +12,6 @@ namespace Community.DataAccess.Repositorios.Seguridad
     {
         Task<List<UsuarioDto>> GetAllAsync();
         Task<List<UsuarioDto>> GetAllPaginateAsync(int pageIndex, int pageSize);
+        int FullDelete(long idUser);
     }
 }

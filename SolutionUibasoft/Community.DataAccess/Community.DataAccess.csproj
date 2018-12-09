@@ -98,7 +98,9 @@
     <Compile Include="Repositorios\Seguridad\Impl\RepoUsuarios.Generic.cs">
       <DependentUpon>RepoUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repositorios\Seguridad\Impl\RepoUsuarios.Generico.Base.cs" />
+    <Compile Include="Repositorios\Seguridad\Impl\RepoUsuarios.Generico.Base.cs">
+      <DependentUpon>RepoUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositorios\Seguridad\Impl\RepoUsuarios.Generico.cs">
       <DependentUpon>RepoUsuarios.cs</DependentUpon>
     </Compile>

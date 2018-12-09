@@ -17,6 +17,11 @@ namespace Community.DataAccess.Repositorios.Seguridad.Impl
             _connectionFactory = connectionFactory;
         }
 
+        public int FullDelete(long idUser)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public async Task<List<UsuarioDto>> GetAllAsync()
         {
             var result = new List<UsuarioDto>();            

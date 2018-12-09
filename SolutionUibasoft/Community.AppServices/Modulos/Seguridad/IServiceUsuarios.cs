@@ -11,5 +11,6 @@ namespace Community.AppServices.Modulos.Seguridad
     {
         Task<List<UsuarioDto>> GetAllPaginate(int pageIndex, int pageSize);
         Task<List<UsuarioDto>> GetAllAsync();
+        int DeleteFullUser(long idUser);
     }
 }

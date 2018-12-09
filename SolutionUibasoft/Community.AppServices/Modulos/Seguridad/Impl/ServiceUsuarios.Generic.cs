@@ -25,5 +25,10 @@ namespace Community.AppServices.Modulos.Seguridad.Impl
         {
             return await _unitOfWork.UsuariosRepo.GetAllAsync();
         }
+
+        public int DeleteFullUser(long idUser)
+        {
+            return _unitOfWork.UsuariosRepo.FullDelete(idUser);
+        }
     }
 }

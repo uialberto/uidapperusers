@@ -9,7 +9,7 @@ using Community.DataTransfer.DataTransferObjects.Modulos.Seguridad;
 
 namespace Community.AppServices.Modulos.Seguridad.Impl
 {
-    public class ServiceUsuarios
+    public class ServiceUsuarios 
     {
         public List<UsuarioDto> List()
         {

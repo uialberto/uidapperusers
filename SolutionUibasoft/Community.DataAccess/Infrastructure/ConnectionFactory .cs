@@ -41,7 +41,7 @@ namespace Community.DataAccess.Infrastructure
                 }
                 var factory = DbProviderFactories.GetFactory(providerFactory);
                 var connection = factory.CreateConnection();
-                if (connection == null) throw  new ArgumentNullException(nameof(connection));
+                if (connection == null) throw  new ArgumentNullException(nameof(connection));                
                 connection.ConnectionString = _connectionString;                
                 return connection;
 
