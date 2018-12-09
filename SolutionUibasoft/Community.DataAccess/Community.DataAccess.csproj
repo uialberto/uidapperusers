@@ -98,11 +98,16 @@
     <Compile Include="Repositorios\Seguridad\Impl\RepoUsuarios.Generic.cs">
       <DependentUpon>RepoUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositorios\Seguridad\Impl\RepoUsuarios.Generico.Base.cs" />
+    <Compile Include="Repositorios\Seguridad\Impl\RepoUsuarios.Generico.cs">
+      <DependentUpon>RepoUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositorios\Seguridad\IRepoUsuarios.cs" />
     <Compile Include="Repository.Dapper.cs" />
     <Compile Include="Repository.Dapper.Generic.cs">
       <DependentUpon>Repository.Dapper.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repository.Generico.cs" />
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.Dapper.cs" />
   </ItemGroup>

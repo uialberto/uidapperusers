@@ -11,17 +11,17 @@ namespace Community.DataAccess
 {
     public class RepositoryDapper<T> : IRepository<T>  where T : class
     {
-        public void Add(T entity)
+        public int Add(T entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(T entity)
+        public int Delete(T entity)
         {
             throw new NotImplementedException();
         }
 
-        public T Get(long id)
+        public T Get(object id)
         {
             throw new NotImplementedException();
         }
@@ -47,7 +47,7 @@ namespace Community.DataAccess
             }
         }
 
-        public void Update(T entity)
+        public int Update(T entity)
         {
             throw new NotImplementedException();
         }

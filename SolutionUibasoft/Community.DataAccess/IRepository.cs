@@ -11,10 +11,10 @@ namespace Community.DataAccess
         IEnumerable<TEntity> GetAll(string query);
         Task<IEnumerable<TEntity>> GetAllAsync(string query);
         int SaveData(string query, TEntity data);
-        TEntity Get(long id);
-        void Add(TEntity entity);
-        void Delete(TEntity entity);
-        void Update(TEntity entity);
+        TEntity Get(object id);
+        int Add(TEntity entity);
+        int Delete(TEntity entity);
+        int Update(TEntity entity);
 
     }
 }

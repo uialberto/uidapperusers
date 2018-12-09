@@ -31,22 +31,22 @@ namespace Community.DataAccess
             throw new NotImplementedException();
         }
 
-        public TEntity Get(long id)
+        public TEntity Get(object id)
         {
             throw new NotImplementedException();
         }
 
-        public void Add(TEntity entity)
+        public int Add(TEntity entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(TEntity entity)
+        public int Delete(TEntity entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(TEntity entity)
+        public int Update(TEntity entity)
         {
             throw new NotImplementedException();
         }
