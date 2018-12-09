@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace Community.DataAccess
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<TEntity> where TEntity : class
     {
-        IEnumerable<T> GetAll(string query);
-        int SaveData(string query, T data);
+        IEnumerable<TEntity> GetAll(string query);
+        Task<IEnumerable<TEntity>> GetAllAsync(string query);
+        int SaveData(string query, TEntity data);
+        TEntity Get(object id);
+        int Add(TEntity entity);
+        int Delete(TEntity entity);
+        int Update(TEntity entity);
+
     }
 }

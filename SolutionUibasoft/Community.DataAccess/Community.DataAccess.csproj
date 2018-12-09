@@ -87,14 +87,33 @@
     <Compile Include="Entidades\Seguridad\Usuario.cs" />
     <Compile Include="Helpers\FactoryDataAccess.cs" />
     <Compile Include="Helpers\SettingsHelper.cs" />
+    <Compile Include="Infrastructure\ConnectionFactory .cs" />
+    <Compile Include="Infrastructure\IConnectionFactory.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\Seguridad\Impl\RepoUsuarios.cs" />
     <Compile Include="Repositorios\Seguridad\Impl\RepoUsuarios.Dapper.cs">
       <DependentUpon>RepoUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositorios\Seguridad\Impl\RepoUsuarios.Generic.cs">
+      <DependentUpon>RepoUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositorios\Seguridad\Impl\RepoUsuarios.Generico.Base.cs">
+      <DependentUpon>RepoUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositorios\Seguridad\Impl\RepoUsuarios.Generico.cs">
+      <DependentUpon>RepoUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositorios\Seguridad\IRepoUsuarios.cs" />
     <Compile Include="Repository.Dapper.cs" />
+    <Compile Include="Repository.Dapper.Generic.cs">
+      <DependentUpon>Repository.Dapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repository.Generico.cs">
+      <DependentUpon>Repository.Dapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.Dapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -110,5 +129,6 @@
       <Name>Community.DataTransfer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
